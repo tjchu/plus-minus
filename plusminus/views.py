@@ -4,7 +4,7 @@ from django.views import generic
 from django.template import loader, RequestContext
 from django.contrib import messages
 
-from .forms import StatsForm
+from .models import Player
 
 def index(request):
     template = loader.get_template("plusminus/index.html")
