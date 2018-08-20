@@ -31,6 +31,7 @@ def get_stats(request, fga, fgm):
 """
 
 def results(request): 
+    name = request.POST.get('name')
     fgm = int(request.POST.get('fgm'))
     fga = int(request.POST.get('fga'))
     if fga <= 0:
@@ -41,4 +42,4 @@ def results(request):
     if (fgp > 100):
         return HttpResponse("You made more shots than your attempts. That's impossible. Try again.")
     else:        
-        return HttpResponse("You attempted %d shots and made %d of them. Your Field Goal Percentage: %d%%." % (fga, fgm, fgp))
+        return HttpResponse("%s attempted %d shots and made %d of them. \nThe Field Goal Percentage: %d%%." % (name, fga, fgm, fgp))
