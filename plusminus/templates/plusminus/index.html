@@ -6,10 +6,10 @@
 <form action="/plusminus/results/" method="post">{% csrf_token %}
     <br />
     <label for="name">Name: </label>
-    <input id="name" type="text" name="name" align="right" value="">
+    <input id="name" type="text" name="name" align="right" value="" required>
     <br />
     <label for="fga">Field Goals Attempts: </label>
-    <input id="fga" type="text" name="fga" align="right" value="">
+    <input id="fga" type="text" name="fga" align="right" value="" required>
     <br />    
     <br />
     <label for="fgm">Field Goals Made: </label>
