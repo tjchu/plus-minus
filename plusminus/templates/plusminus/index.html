@@ -1,20 +1,31 @@
-<html>
+<!doctype html>
+<html lang="en">
   <title>Plus Minus Calculator</title>
   <header>
     <h1>Basketball Statistics Calculator</h1>
   </header>
-<form action="/plusminus/results/" method="post">{% csrf_token %}
-    <br />
-    <label for="name">Name: </label>
-    <input id="name" type="text" name="name" align="right" value="" required>
-    <br />
-    <label for="fga">Field Goals Attempts: </label>
-    <input id="fga" type="text" name="fga" align="right" value="" required>
-    <br />    
-    <br />
-    <label for="fgm">Field Goals Made: </label>
-    <input id="fgm" type="text" name="fgm" align="right" value="" required>
-    <br />
-    <input type="submit" value="Submit">
-</form>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <form>
+      <div class="form-group">
+        <br />
+        <label for="name">Name: </label>
+        <input id="name" type="text" name="name" align="right" value="" required>
+        <br />
+        <label for="fga">Field Goals Attempts: </label>
+        <input id="fga" type="number" name="fga" align="right" value="" required>
+        <br />    
+        <br />
+        <label for="fgm">Field Goals Made: </label>
+        <input id="fgm" type="number" name="fgm" align="right" value="" required>
+        <br />
+        <input type="submit" value="Submit">
+    </form>
+
 </html>
