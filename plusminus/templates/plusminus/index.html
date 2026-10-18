@@ -1,31 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <title>Plus Minus Calculator</title>
-  <header>
-    <h1>Basketball Statistics Calculator</h1>
-  </header>
-
-    <!-- Required meta tags -->
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
+    <title>Plus Minus Calculator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body class="container py-5">
+    <h1 class="mb-4">Basketball Statistics Calculator</h1>
 
-    <form>
+    {% if error_message %}
+      <div class="alert alert-danger" role="alert">{{ error_message }}</div>
+    {% endif %}
+
+    <form method="post" action="{% url 'plusminus:results' %}">
+      {% csrf_token %}
       <div class="form-group">
-        <br />
-        <label for="name">Name: </label>
-        <input id="name" type="text" name="name" align="right" value="" required>
-        <br />
-        <label for="fga">Field Goals Attempts: </label>
-        <input id="fga" type="number" name="fga" align="right" value="" required>
-        <br />    
-        <br />
-        <label for="fgm">Field Goals Made: </label>
-        <input id="fgm" type="number" name="fgm" align="right" value="" required>
-        <br />
-        <input type="submit" value="Submit">
+        <label for="name">Name</label>
+        <input id="name" class="form-control" type="text" name="name" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="fga">Field Goal Attempts</label>
+        <input id="fga" class="form-control" type="number" min="0" name="fga" value="" required>
+      </div>
+      <div class="form-group">
+        <label for="fgm">Field Goals Made</label>
+        <input id="fgm" class="form-control" type="number" min="0" name="fgm" value="" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
+  </body>
 </html>

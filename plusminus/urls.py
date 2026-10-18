@@ -1,9 +1,9 @@
-from django.conf.urls import url
+from django.urls import path
 
 from plusminus import views
 
 app_name = 'plusminus'
 urlpatterns = [
-    url('', views.index),
-    url('results/', views.results),
+    path('', views.index, name='index'),
+    path('results/', views.results, name='results'),
 ]
